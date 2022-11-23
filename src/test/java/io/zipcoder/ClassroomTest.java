@@ -100,4 +100,28 @@ public class ClassroomTest {
         System.out.println(removed);
         Assert.assertArrayEquals(actual, expected);
     }
+
+    public void getGradeBookTest() {
+        Double[] s1Scores = {150.0, 150.0};
+        Double[] s2Scores = {225.0, 25.0};
+        Double[] s3Scores = {175.0, 150.0};
+        Double[] s4Scores = {225.0, 25.0};
+        ArrayList<Double> s1ScoresList = new ArrayList<>(List.of(s1Scores));
+        ArrayList<Double> s2ScoresList = new ArrayList<>(List.of(s2Scores));
+        ArrayList<Double> s3ScoresList = new ArrayList<>(List.of(s3Scores));
+        ArrayList<Double> s4ScoresList = new ArrayList<>(List.of(s4Scores));
+        Student s1 = new Student("student1", "one", s1ScoresList);
+        Student s2 = new Student("student2", "two", s2ScoresList);
+        Student s3 = new Student("student3", "three", s3ScoresList);
+        Student s4 = new Student("student4", "four", s4ScoresList);
+
+        Student[] students = {s1, s2, s3 , s4};
+        Classroom classroom = new Classroom(students);
+        classroom.getStudentsByScore();
+
+        Student[] actual = classroom.getStudents();
+        String scoreSort = Arrays.toString(actual);
+        //Student[] expected =
+
+    }
 }

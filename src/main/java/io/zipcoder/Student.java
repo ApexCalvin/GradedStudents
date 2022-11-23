@@ -13,7 +13,6 @@ public class Student {
     }
 
     public int getNumberOfExamsTaken() {
-
         return this.examScores.size();
     }
 
@@ -34,12 +33,11 @@ public class Student {
     }
 
     public String getExamScores() {
-
         StringBuilder listed = new StringBuilder("Exam Scores:");
         for(int i = 0 ; i < this.examScores.size() ; i++) {
             listed.append("\n\tExam ").append(i + 1).append(" -> ").append(String.format("%.0f", this.examScores.get(i)));
         }
-        return listed.toString(); //maybe?
+        return listed.toString();
     }
 
     public void addExamScore(double examScore) {
@@ -52,8 +50,8 @@ public class Student {
 
     public double getAverageExamScore() { // CALVIN
         Double sum = 0.0;
-        for(int i = 0 ; i < this.examScores.size() ; i++) {
-            sum += this.examScores.get(i);
+        for (Double examScore : this.examScores) {
+            sum += examScore;
         }
         return sum / this.examScores.size();
     }
